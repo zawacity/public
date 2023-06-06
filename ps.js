@@ -1077,7 +1077,7 @@
                 b = !1
             }
             return b
-        } catch (err){}
+        } catch {
             return !1
         }
     }
@@ -1111,7 +1111,7 @@
             const a = new Uint32Array(1);
             globalThis.crypto.getRandomValues(a);
             return a[0] / 65536 / 65536
-        } catch (err){}
+        } catch {
             return Math.random()
         }
     }
@@ -1147,7 +1147,7 @@
             for (let e = 0; 50 > e; ++e) {
                 try {
                     var c = !(!a.frames || !a.frames[b])
-                } catch (err){}
+                } catch {
                     c = !1
                 }
                 if (c) return a;
@@ -1158,7 +1158,7 @@
                             var d = f;
                             break a
                         }
-                    } catch (err){}
+                    } catch {}
                     d = null
                 }
                 if (!(a = d)) break
@@ -1177,7 +1177,7 @@
         Tc = [];
         for (const b of a) try {
             b()
-        } catch (err){}
+        } catch {}
     };
     var Vc = () => {
             var a = Math.random;
@@ -1269,7 +1269,7 @@
         let b = a.context || a.AMP_CONTEXT_DATA;
         if (!b) try {
             b = a.parent.context || a.parent.AMP_CONTEXT_DATA
-        } catch (err){}
+        } catch {}
         return b?.pageViewId && b?.canonicalUrl ? b : null
     }
 
@@ -2159,7 +2159,7 @@
         try {
             const a = window.sessionStorage && window.sessionStorage.getItem("GGDFSSK");
             if (a) return JSON.parse(a)
-        } catch (err){}
+        } catch {}
         return {}
     });
 
@@ -3986,7 +3986,7 @@
     function ij(a, b = window) {
         if (F(a, 5)) try {
             return b.localStorage
-        } catch (err){}
+        } catch {}
         return null
     };
 
@@ -5905,19 +5905,19 @@
             for (; null != a && e < d.length; e++) f = a, a = a[d[e]], "function" === typeof a && (a = f[d[e]]());
             var c = a;
             if (typeof c === b) return c
-        } catch (err){}
+        } catch {}
     }
     var zm = {
         [3]: {
             [8]: a => {
                 try {
                     return null != ba(a)
-                } catch (err){}
+                } catch {}
             },
             [9]: a => {
                 try {
                     var b = ba(a)
-                } catch (err){}
+                } catch {
                     return
                 }
                 if (a = "function" === typeof b) b = b && b.toString && b.toString(), a = "string" === typeof b && -1 != b.indexOf("[native code]");
@@ -5932,7 +5932,7 @@
             [60]: a => {
                 try {
                     return !!m.document.querySelector(a)
-                } catch (err){}
+                } catch {}
             },
             [69]: a => wm(a, m.document),
             [70]: a => xm(a, m.document)
@@ -5949,7 +5949,7 @@
             [3]: () => {
                 try {
                     return window.top.location.hash
-                } catch (err){}
+                } catch {
                     return ""
                 }
             },
@@ -6238,7 +6238,7 @@
             if (!b) return a;
             const c = b.pubads();
             for (const d of c.getSlots()) a.add(d.getSlotId().getDomId())
-        } catch (err){}
+        } catch {}
         return a
     }
 
@@ -6565,7 +6565,7 @@
                 try {
                     if (f.frames)
                         for (let g = 0; g < f.frames.length && 1024 > b.length; ++g) b.push(f.frames[g])
-                } catch (err){}
+                } catch {}
             }
             b = c;
             for (c = 0; c < b.length; c++) try {
@@ -7291,7 +7291,7 @@
             }), Object.defineProperty(a, "onload", {
                 set: Oo
             })
-        } catch (err){}
+        } catch {}
     }
 
     function Oo(a) {
@@ -7378,7 +7378,7 @@
                 bk();
                 try {
                     nn()
-                } catch (err){}
+                } catch {}
                 Qn();
                 yo(g, e);
                 f = window;
